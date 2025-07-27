@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://10.136.251.78:5000/api/auth/login", {
+      const response = await fetch("https://zivaa.onrender.com/api/auth/login", {
         
         method: "POST",
         headers: { "Content-Type": "application/json" },

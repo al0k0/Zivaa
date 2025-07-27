@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
 
     const fetchCart = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/cart/${userId}`);
+        const res = await axios.get(`https://zivaa.onrender.com/api/cart/${userId}`);
         setCart(res.data);
         console.log("✅ Cart fetched:", res.data);
       } catch (err) {
@@ -51,7 +51,7 @@ export const CartProvider = ({ children }) => {
     }
   
     try {
-      const res = await axios.post("http://localhost:5000/api/cart", {
+      const res = await axios.post("https://zivaa.onrender.com/api/cart", {
         userId,
         product,
       });
@@ -66,7 +66,7 @@ export const CartProvider = ({ children }) => {
   // Remove Cart 
   const removeFromCart = async (productId) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/cart/${userId}/${productId}`);
+      const res = await axios.delete(`https://zivaa.onrender.com/api/cart/${userId}/${productId}`);
       setCart(res.data.cart); // Assuming the backend sends the updated cart
       console.log("🗑️ Removed from cart:", res.data.cart);
     } catch (err) {
@@ -77,7 +77,7 @@ export const CartProvider = ({ children }) => {
   // Update quantity 
   const updateQuantity = async (productId, quantity) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/cart`, {
+      const res = await axios.put(`https://zivaa.onrender.com/api/cart`, {
         userId,
         productId,
         quantity,

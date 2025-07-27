@@ -45,7 +45,7 @@ const Signup = () => {
 
   
     try {
-      const response = await fetch("http://10.136.251.78:5000/api/auth/signup", {
+      const response = await fetch("https://zivaa.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

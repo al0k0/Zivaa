@@ -32,7 +32,7 @@ const ProductInfo = () => {
     const getInfo = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://10.136.251.78:5000/api/products/product/${productId}`);
+        const res = await fetch(`https://zivaa.onrender.com/api/products/product/${productId}`);
         const data = await res.json();
         setInfo(data);
         if (data?.size?.[0]) setSelectedSize(data.size[0]);

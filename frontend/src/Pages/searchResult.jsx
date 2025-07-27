@@ -23,7 +23,7 @@ const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const res = await fetch(`http://10.136.251.78:5000/api/products/search?q=${query}`);
+        const res = await fetch(`https://zivaa.onrender.com/api/products/search?q=${query}`);
        if (res.ok) {
   const data = await res.json();
   setResults(Array.isArray(data) ? data : []);

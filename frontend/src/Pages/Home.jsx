@@ -29,7 +29,7 @@ function Categories() {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 const navigate = useNavigate()
   useEffect(() => {
-    fetch("http://10.136.251.78:5000/api/categories")
+    fetch("https://zivaa.onrender.com/api/categories")
       .then(res => res.json())
       .then(data => setCategories(data));
   }, []);
@@ -41,7 +41,7 @@ const navigate = useNavigate()
   // const [bestSellingProducts, setBestSellingProducts] = useState([]);
 
   // useEffect(() => {
-  //   axios.get("http://localhost:5000/api/products/best-sellers")
+  //   axios.get("https://zivaa.onrender.comapi/products/best-sellers")
   //     .then(response => {
   //       console.log("Best Selling Products Data:", response.data); // ✅ Console log API response
   //       setBestSellingProducts(response.data);

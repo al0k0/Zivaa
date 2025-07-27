@@ -16,7 +16,7 @@ const SearchModule = ({ closeSearch }) => {
   const handleSearch = async (e) => {
     if (e.key === 'Enter' && searchTerm.trim()) {
       try {
-        const res = await fetch(`http://localhost:5000/api/products/search?q=${searchTerm}`);
+        const res = await fetch(`https://zivaa.onrender.com/api/products/search?q=${searchTerm}`);
         if (res.status === 404) {
           setNotFound(true);
         } else {
