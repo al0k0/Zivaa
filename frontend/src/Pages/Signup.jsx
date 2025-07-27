@@ -62,23 +62,6 @@ const Signup = () => {
     }
   };
 
-  const handleGoogleLogin = async () => {
-  try {
-    const result = await signInWithPopup(auth, provider);
-    const user = result.user;
-
-    console.log("User Info:", user);
-    // Save user info in localStorage or state
-    localStorage.setItem("userId", user.uid);
-    localStorage.setItem("email", user.email);
-    localStorage.setItem("name", user.displayName);
-    
-    // Redirect to homepage or dashboard
-  } catch (err) {
-    console.error("Google Login Failed", err);
-  }
-};
-  
   return (
       <motion.div
           initial={{ opacity: 0, y: 30 }}
