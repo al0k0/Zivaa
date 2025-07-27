@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Banner from '../Images/signupBanner.png';
+
 import { useAuth } from "../context/authContext";
 import { motion } from "framer-motion";
 

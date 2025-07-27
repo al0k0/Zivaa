@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Banner from '../Images/signupBanner.png'
 import { motion } from 'framer-motion'
 
 const Signup = () => {
