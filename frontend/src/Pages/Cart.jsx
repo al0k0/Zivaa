@@ -1,7 +1,7 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import { useOrder } from '../context/OrderContext';
+import { useOrder } from '../context/orderContext';
 import { motion } from "framer-motion";
 const Cart = () => {
   const navigate = useNavigate();
