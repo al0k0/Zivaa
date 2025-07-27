@@ -18,7 +18,7 @@ const Products = ({ selectedCategoryId }) => {
 
   useEffect(() => {
     if (categoryId) {
-      fetch(`http://localhost:5000/api/products/${categoryId}`)
+      fetch(`https://zivaa.onrender.com/api/products/${categoryId}`)
         .then((res) => res.json())
         .then((data) => setProducts(data))
         .catch((err) => console.error("Error fetching products:", err));
