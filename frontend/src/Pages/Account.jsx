@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaUserCircle } from "react-icons/fa";
-
+import { FaPen } from "react-icons/fa";
 const Account = () => {
   const [userData, setUserData] = useState({
     name: "",
@@ -21,7 +21,7 @@ const Account = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("https://zivaa.onrender.comapi/auth/profile", {
+        const res = await fetch("https://zivaa.onrender.com/api/auth/profile", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -49,7 +49,7 @@ const Account = () => {
   // ✅ Save profile changes
   const handleSave = async () => {
     try {
-      const res = await fetch("https://zivaa.onrender.comapi/auth/account", {
+      const res = await fetch("https://zivaa.onrender.com/api/auth/account", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const handleImageChange = (e) => {
     const formData = new FormData();
     formData.append("avatar", file);
 
-    fetch("https://zivaa.onrender.comapi/auth/account/avatar", {
+    fetch("https://zivaa.onrender.com/api/auth/account/avatar", {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -114,7 +114,7 @@ const handleImageChange = (e) => {
       src={
         selectedImage.startsWith("blob:")
           ? selectedImage
-          : `http://localhost:5000${userData.avatar}`
+          : `https://zivaa.onrender.com${userData.avatar}`
       }
       alt="Profile"
       className="w-full h-full object-cover"
@@ -139,7 +139,7 @@ const handleImageChange = (e) => {
     htmlFor="avatarInput"
     className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center cursor-pointer transition"
   >
-   <i class="fa-solid fa-pencil"></i>
+  <FaPen className="text-white" />
   </label>
 </div>
 
