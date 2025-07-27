@@ -126,92 +126,82 @@ const navigate = useNavigate()
             >
     <div className="mt-16 ">
       <div className="relative ">
-        <Slider {...settings}>
-          {/* SLIDER 1  */}
+       <Slider {...settings}>
+  {/* SLIDER 1 */}
+  <div className="relative border-r-2  shadow-md bg-zivaa-primary overflow-hidden">
+    <img
+      src={Slider1}
+      alt="slider1"
+      className="h-[60vh] lg:h-96  "
+    />
+    <div className="absolute inset-0 bg-black opacity-25"></div>
 
-      <div className="relative border-r-2 lg:h-96 shadow-md bg-zivaa-primary"> {/* ✅ bg added here */}
-  <img
-    src={Slider1}
-    alt="slider1"
-    className="relative h-full"
-  />
-  <div className="absolute inset-0 bg-black opacity-25"></div>
+    <div
+      className={`absolute inset-0 flex flex-col items-center justify-center text-center px-4 ${
+        currentSlide === 0 ? "animate-fade-in" : "opacity-0"
+      }`}
+    >
+      <h1 className="font-serif text-3xl lg:text-6xl mt-16 lg:mt-0 font-bold text-zivaa-lavender">
+        Elevate Your Everyday
+      </h1>
+      <p className="max-w-3xl text-zivaa-light py-4 font-body tracking-wider text-sm lg:text-base">
+        Uncover signature styles that define confidence and grace
+      </p>
+      <div className="flex flex-wrap justify-center gap-4 mt-4 lg:mt-6">
+        <button className="relative border border-gray-400 text-white font-bold py-2 px-4 rounded-md overflow-hidden group text-sm lg:text-base">
+          <span className="relative z-10">SHOP NOW <i className="fa-solid fa-arrow-right"></i></span>
+          <span className="absolute top-0 left-0 w-0 h-full bg-zivaa-accent transition-all duration-500 group-hover:w-full"></span>
+        </button>
 
-  <div
-    className={`absolute inset-0 flex flex-col items-center justify-center text-center lg:gap-10 ${
-      currentSlide === 0 ? "animate-fade-in" : "opacity-0"
-    }`}
-  >
-    <h1 className="font-serif lg:text-6xl text-3xl lg:mt-0 mt-20 font-bold text-zivaa-lavender "> {/* ✅ black text for ivory bg */}
-      Elevate Your Everyday
-    </h1>
-    <p className="max-w-[60rem] text-zivaa-light py-5 lg:py-0 font-body tracking-wider text-sm lg:text-base">
-Uncover signature styles that define confidence and grace    </p>
-    <div className="lg:space-x-10 space-x-5 lg:mt-0 mt-10">
-      <button className="inline-block border border-gray-400 cursor-pointer relative overflow-hidden text-white bg-transparent font-bold lg:py-2 py-1 px-2 lg:px-4 rounded-md transition-all duration-500 ease-in-out group">
-        <span className="relative z-10 text-sm lg:text-base">
-          SHOP NOW <i className="fa-solid fa-arrow-right"></i>
-        </span>
-        <span className="absolute top-0 left-0 w-full lg:w-12 h-full bg-zivaa-accent transform transition-all duration-500 group-hover:w-full ease-in-out lg:group-hover:bg-zivaa-accent"></span>
-      </button>
+        <button className="relative border border-gray-400 text-white font-bold py-2 px-4 rounded-md overflow-hidden group text-sm lg:text-base">
+          <span className="relative z-10">EXPLORE <i className="fa-solid fa-arrow-right"></i></span>
+          <span className="absolute top-0 left-0 w-0 h-full bg-zivaa-accent transition-all duration-500 group-hover:w-full"></span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-      <button className="inline-block border border-gray-400 cursor-pointer relative overflow-hidden text-white bg-transparent font-bold lg:py-2 py-1 px-2 lg:px-7 rounded-md transition-all duration-500 ease-in-out group">
-        <span className="relative z-10 text-sm lg:text-base">
-          EXPLORE <i className="fa-solid fa-arrow-right"></i>
-        </span>
-        <span className="absolute top-0 left-0 w-full lg:w-12 h-full bg-zivaa-accent transform transition-all duration-500 group-hover:w-full ease-in-out lg:group-hover:bg-zivaa-accent"></span>
+  {/* SLIDER 2 */}
+  <div className="relative border-r-2 bg-zivaa-primary shadow-md  overflow-hidden">
+    <img
+      src={Slider2}
+      alt="slider"
+      className="h-[60vh] lg:h-96"
+    />
+    <div className="absolute inset-0 bg-black opacity-25"></div>
+
+    <div className={`absolute inset-0 flex flex-col items-center justify-center text-center px-4 ${currentSlide === 1 ? 'animate-fade-in' : 'opacity-0'}`}>
+      <h1 className="font-serif text-3xl lg:text-4xl font-bold text-zivaa-lavender mt-16 lg:mt-0">Summer Muse Collection</h1>
+      <p className="max-w-2xl font-body text-white text-sm lg:text-lg tracking-wider">
+        Celebrate the essence of femininity this summer with timeless silhouettes and breezy designs made to inspire and empower.
+      </p>
+      <button className="mt-4 bg-zivaa-accent text-zivaa-light font-body px-4 py-2 text-sm lg:text-base rounded hover:bg-zivaa-light hover:text-zivaa-accent transition duration-300">
+        Summer Collection
       </button>
     </div>
   </div>
-</div>
 
+  {/* SLIDER 3 */}
+  <div className="relative border-r-2 bg-zivaa-primary shadow-md overflow-hidden">
+    <img
+      src={Slider3}
+      alt="slider3"
+      className="h-[60vh] lg:h-96 "
+    />
+    <div className="absolute inset-0 bg-black opacity-25"></div>
 
-          {/* SLIDER 2 */}
+    <div className={`absolute inset-0 flex flex-col items-center justify-center text-center px-4 ${currentSlide === 2 ? 'animate-fade-in' : 'opacity-0'}`}>
+      <h1 className="font-serif text-3xl lg:text-4xl font-bold text-zivaa-lavender mt-16 lg:mt-0">Discover the Latest Trends</h1>
+      <p className="text-white text-sm lg:text-lg font-body tracking-wider">
+        Get up to <span className="font-bold text-zivaa-accent">50% OFF</span> on our latest collection.
+      </p>
+      <button className="mt-4 bg-zivaa-accent text-zivaa-light font-body px-4 py-2 text-sm lg:text-base rounded font-semibold uppercase tracking-wider">
+        Grab the Deal
+      </button>
+    </div>
+  </div>
+</Slider>
 
-          <div className="relative border-r-2 bg-zivaa-primary shadow-md">
-            <div className="flex">
-              <img
-                src={Slider2}
-                alt="slider"
-                className=" mt-16 lg:mt-0  lg:h-96 "
-              />
-             
-            </div>
-            <div className="absolute inset-0 bg-black opacity-25"></div>
-
-            <div className={`  absolute inset-0 flex flex-col items-center justify-center text-center gap-5 lg:gap-10 ${currentSlide === 1 ? 'animate-fade-in' : 'opacity-0'}`} >
-              <h1 className="  font-serif text-3xl lg:text-4xl font-bold mt-20 lg:mt-0 leading-normal text-zivaa-lavender tracking-wide ">Summer Muse Collection</h1>
-              <p className=" max-w-[50rem] font-body text-white   tracking-wider text-sm lg:text-lg">Celebrate the essence of femininity this summer with timeless silhouettes and breezy designs made to inspire and empower.</p>
-              <div className="space-x-10">
-               
-
-                <button className="bg-zivaa-accent text-sm mt-10 lg:mt-0  lg:text-base font-body text-zivaa-light lg:px-2 lg:py-2 py-1 px-2 uppercase rounded font-semibold hover:bg-zivaa-light hover:text-zivaa-accent transition duration-300">
-                  Summer Collection
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* SLIDER 3 */}
-          <div className="relative border   border-r-2 bg-zivaa-primary shadow-md ">
-<div className="flex items-end justify-end">
-<img
-  src={Slider3}
-  alt="slider1"
-  className=" relative lg:h-96 top-2  lg:mt-0 mt-2 "/>
-</div>
-<div className="absolute inset-0 bg-black opacity-25"></div>
-
-<div className={` absolute inset-0 flex flex-col items-center justify-center text-center mx-5 lg:mx-40 gap-5 lg:gap-10 ${currentSlide === 2 ? 'animate-fade-in' : 'opacity-0'}`} >
-  <h1 className="font-serif text-3xl lg:text-4xl mt-20 lg:mt-0 font-bold text-zivaa-lavender  tracking-wider  ">Discover the Latest Trends</h1>
-  <p className=" lg:text-lg text-sm tracking-wider  font-body text-white">Get up to <span className="font-bold font-body text-zivaa-accent">50% OFF</span> on our latest collection.</p>
-  <button className=" bg-zivaa-accent text-zivaa-light font-body lg:px-4 px-2 py-1 lg:py-2 lg:text-base text-sm rounded font-semibold uppercase tracking-wider">
-    Grab the Deal
-  </button>
-</div>
-</div>
-         
-        </Slider>
           
       </div>
   
