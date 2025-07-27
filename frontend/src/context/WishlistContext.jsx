@@ -32,7 +32,7 @@ export const WishlistProvider = ({ children }) => {
 
     const fetchWishlist = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/wishlist/${userId}`);
+        const res = await fetch(`https://zivaa.onrender.comapi/wishlist/${userId}`);
         if (!res.ok) throw new Error("Failed to fetch wishlist");
 
         const data = await res.json();
@@ -54,7 +54,7 @@ export const WishlistProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/wishlist", {
+      const res = await fetch("https://zivaa.onrender.comapi/wishlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, product }),
@@ -78,7 +78,7 @@ export const WishlistProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/wishlist/${userId}/${productId}`, {
+      const res = await fetch(`https://zivaa.onrender.comapi/wishlist/${userId}/${productId}`, {
         method: "DELETE",
       });
 

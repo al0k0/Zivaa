@@ -7,7 +7,7 @@ const OrderContext = createContext();
 export const OrderProvider = ({ children }) => {
   const placeOrder = async (userId, cart) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/orders", {
+      const res = await axios.post("https://zivaa.onrender.comapi/orders", {
         userId,
         items: cart,
       });
@@ -21,7 +21,7 @@ export const OrderProvider = ({ children }) => {
 
   const getOrders = async (userId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/orders/${userId}`);
+      const res = await axios.get(`https://zivaa.onrender.comapi/orders/${userId}`);
       return res.data;
     } catch (err) {
       console.error("❌ Error fetching orders:", err);

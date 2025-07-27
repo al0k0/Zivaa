@@ -21,7 +21,7 @@ const Account = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/auth/profile", {
+        const res = await fetch("https://zivaa.onrender.comapi/auth/profile", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -49,7 +49,7 @@ const Account = () => {
   // ✅ Save profile changes
   const handleSave = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/account", {
+      const res = await fetch("https://zivaa.onrender.comapi/auth/account", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const handleImageChange = (e) => {
     const formData = new FormData();
     formData.append("avatar", file);
 
-    fetch("http://localhost:5000/api/auth/account/avatar", {
+    fetch("https://zivaa.onrender.comapi/auth/account/avatar", {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

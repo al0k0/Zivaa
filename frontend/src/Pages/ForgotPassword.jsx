@@ -20,7 +20,7 @@ const ForgotPassword = () => {
 
   const handleSendOtp = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/send-otp", {
+      const res = await fetch("https://zivaa.onrender.comapi/auth/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -40,7 +40,7 @@ const ForgotPassword = () => {
 
   const handleVerifyOtp = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/verify-otp", {
+      const res = await fetch("https://zivaa.onrender.comapi/auth/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),
@@ -60,7 +60,7 @@ const ForgotPassword = () => {
 
   const handleResetPassword = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/reset-password", {
+      const res = await fetch("https://zivaa.onrender.comapi/auth/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, newPassword }),
