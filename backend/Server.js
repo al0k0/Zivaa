@@ -7,7 +7,6 @@ const wishlistRoutes = require("./routes/wishlistRoutes")
 const cartRoutes = require("./routes/cartRoutes")
 const orderRoutes = require("./routes/orderRoutes")
 const contactRoutes = require('./routes/contactRoute')
-const adminRoute = require('./routes/adminRoutes')
 const path = require("path")
 require("dotenv").config()
 
@@ -22,7 +21,6 @@ app.use("/api", wishlistRoutes)
 app.use("/api", cartRoutes)
 app.use("/api/orders", orderRoutes)
 app.use('/api/contacts', contactRoutes)
-app.use('/api', adminRoute)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
