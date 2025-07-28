@@ -70,7 +70,7 @@ navigate(`/search?q=${searchTerm}`);
     >
       <header>
         <nav className="font-serif flex justify-between items-center bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 text-zivaa-text shadow-2xl p-3 px-6 md:px-12 fixed w-full top-0 z-50">
-          <Link to="/" className="text-3xl md:text-4xl tracking-widest text-zivaa-primary">ZIVAA</Link>
+          <Link to="/" className="text-3xl font-semibold font-serif md:text-4xl tracking-widest text-zivaa-primary ">ZIVAA</Link>
 
           {/* Hamburger icon */}
       {/* Mobile: Search + Hamburger icon */}
@@ -239,7 +239,7 @@ navigate(`/search?q=${searchTerm}`);
         {/* Mobile Menu */}
        {showModal && (
         <>
-  <div className="fixed w-full top-14 pt-5 z-10 bg-white text-black px-3 pb-4 shadow-xl md:hidden ">
+  <div className="fixed w-full top-14 pt-5 z-50 bg-white text-black px-3 pb-4 shadow-xl md:hidden ">
     {[
       { label: "Home", path: "/" },
       { label: "Shop", path: "/shop" },
