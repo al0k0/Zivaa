@@ -2,14 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Review from './Review'
-
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider1 from "../Images/slider1.png"
-import Slider2 from "../Images/slider2.png"
-
-import Slider3 from "../Images/slider3.png"
 import Products from "./Products"
 import Show from "../Images/show.jpg"
 import Banner from "../Images/banner.jpg"
@@ -19,11 +11,19 @@ import Brand3 from "../Images/brand3.png"
 import Brand4 from "../Images/brand4.png"
 import Brand5 from "../Images/brand5.png"
 import { motion } from "framer-motion";
+import { Typewriter } from 'react-simple-typewriter';
 import { Facebook, Twitter, Youtube, Instagram, Github, Linkedin  } from 'lucide-react';
+
+// const phrases = [
+//   'Elevate Your Style.',
+//   'Unleash the Diva in You.',
+//   'Because You Deserve Luxury.',
+//   'Trending Now: You.'
+// ];
 
 
 function Categories() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  
 
   const [categories, setCategories] = useState([ ]);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
@@ -38,85 +38,6 @@ const navigate = useNavigate()
   }
 
 
-  // const [bestSellingProducts, setBestSellingProducts] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get("https://zivaa.onrender.comapi/products/best-sellers")
-  //     .then(response => {
-  //       console.log("Best Selling Products Data:", response.data); // ✅ Console log API response
-  //       setBestSellingProducts(response.data);
-  //     })
-  //     .catch(error => console.error("Error fetching best sellers:", error));
-  // }, []);
-  
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-    beforeChange: (current, next) => setCurrentSlide(next),
-    customPaging: i => (
-      <div
-        style={{
-          width: i === currentSlide ? '10px' : '8px',
-          height: i === currentSlide ? '10px' : '8px',
-          backgroundColor: i === currentSlide ? 'black' : 'gray',
-          borderRadius: '50%',
-          cursor: 'pointer'
-        }}
-      ></div>
-    ),
-    appendDots: dots => (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        padding: '10px',
-      }}>
-        <ul style={{ margin: '15px', display: 'flex', gap: '8px' }}>{dots}</ul>
-      </div>
-    )
-  };
-  
-
-  const setting = {
-    dots: false,
-    // infinite: true,
-    // speed: 500,
-    // slidesToShow: 4,
-    // slidesToScroll: 1,
-    // // autoplay: true,
-    // autoplaySpeed: 2000,
-    responsive: [
-      {
-        // breakpoint: 1024,
-        settings: {
-          // slidesToShow: 3,
-          // slidesToScroll: 1,
-        }
-      },
-      {
-        // breakpoint: 600,
-        settings: {
-          // slidesToShow: 2,
-          // slidesToScroll: 1,
-        }
-      },
-      {
-        // breakpoint: 480,
-        settings: {
-          // slidesToShow: 1,
-          // slidesToScroll: 1,
-        }
-      }
-    ]
-  };
-  
-  
   return (
     <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -125,85 +46,45 @@ const navigate = useNavigate()
               transition={{ duration: 0.3 }}
             >
     <div className="mt-16 ">
-      <div className="relative ">
-       <Slider {...settings}>
-  {/* SLIDER 1 */}
-  <div className="relative border-r-2  shadow-md bg-zivaa-primary overflow-hidden">
-    <img
-      src={Slider1}
-      alt="slider1"
-      className="h-[60vh] lg:h-96  "
-    />
-    <div className="absolute inset-0 bg-black opacity-25"></div>
+ <section className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-[#6F577D] via-[#CBAACB] to-[#FAFAFA] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-[#EC0B43]/10 via-transparent to-transparent z-0"></div>
 
-    <div
-      className={`absolute inset-0 flex flex-col items-center justify-center text-center px-4 ${
-        currentSlide === 0 ? "animate-fade-in" : "opacity-0"
-      }`}
-    >
-      <h1 className="font-serif text-3xl lg:text-6xl mt-16 lg:mt-0 font-bold text-zivaa-lavender">
-        Elevate Your Everyday
-      </h1>
-      <p className="max-w-3xl text-zivaa-light py-4 font-body tracking-wider text-sm lg:text-base">
-        Uncover signature styles that define confidence and grace
-      </p>
-      <div className="flex flex-wrap justify-center gap-4 mt-4 lg:mt-6">
-        <button className="relative border border-gray-400 text-white font-bold py-2 px-4 rounded-md overflow-hidden group text-sm lg:text-base">
-          <span className="relative z-10">SHOP NOW <i className="fa-solid fa-arrow-right"></i></span>
-          <span className="absolute top-0 left-0 w-0 h-full bg-zivaa-accent transition-all duration-500 group-hover:w-full"></span>
-        </button>
+      <div className="relative z-10 text-center max-w-3xl px-4">
+        <h1 className="text-3xl md:text-5xl font-extrabold font-serif text-zivaa-primary   drop-shadow-xl mb-4">
+          Welcome to ZYRE
+        </h1>
 
-        <button className="relative border border-gray-400 text-white font-bold py-2 px-4 rounded-md overflow-hidden group text-sm lg:text-base">
-          <span className="relative z-10">EXPLORE <i className="fa-solid fa-arrow-right"></i></span>
-          <span className="absolute top-0 left-0 w-0 h-full bg-zivaa-accent transition-all duration-500 group-hover:w-full"></span>
-        </button>
+        <h2 className="text-xl md:text-3xl font-medium text-[#FAFAFA]">
+          <Typewriter
+            words={[
+              'Unleash the power of modern fashion.',
+              'Redefine your wardrobe with elegance.',
+              'Discover curated styles for every occasion.',
+              'Shop the future. Today.',
+            ]}
+            loop={0}
+            cursor
+            cursorStyle="_"
+            typeSpeed={50}
+            deleteSpeed={40}
+            delaySpeed={2000}
+          />
+        </h2>
+
+        <p className="mt-6 text-sm md:text-lg text-zivaa-secondaryText font-light">
+          Experience the latest fashion trends exclusively designed for bold, confident, and stylish women. Join us and explore timeless designs with a modern twist.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <button className="w-full sm:w-auto px-6 py-3 font-semibold rounded-full bg-[#EC0B43] text-white hover:bg-[#6F577D] transition-all duration-300 shadow-md">
+            Explore Now
+          </button>
+          <button className="w-full sm:w-auto px-6 py-3 font-semibold rounded-full border border-[#EC0B43] text-[#EC0B43] hover:bg-[#EC0B43] hover:text-white transition-all duration-300 shadow-md">
+            Learn More
+          </button>
+        </div>
       </div>
-    </div>
-  </div>
-
-  {/* SLIDER 2 */}
-  <div className="relative border-r-2 bg-zivaa-primary shadow-md  overflow-hidden">
-    <img
-      src={Slider2}
-      alt="slider"
-      className="h-[60vh] lg:h-96"
-    />
-    <div className="absolute inset-0 bg-black opacity-25"></div>
-
-    <div className={`absolute inset-0 flex flex-col items-center justify-center text-center px-4 ${currentSlide === 1 ? 'animate-fade-in' : 'opacity-0'}`}>
-      <h1 className="font-serif text-3xl lg:text-4xl font-bold text-zivaa-lavender mt-16 lg:mt-0">Summer Muse Collection</h1>
-      <p className="max-w-2xl font-body text-white text-sm lg:text-lg tracking-wider">
-        Celebrate the essence of femininity this summer with timeless silhouettes and breezy designs made to inspire and empower.
-      </p>
-      <button className="mt-4 bg-zivaa-accent text-zivaa-light font-body px-4 py-2 text-sm lg:text-base rounded hover:bg-zivaa-light hover:text-zivaa-accent transition duration-300">
-        Summer Collection
-      </button>
-    </div>
-  </div>
-
-  {/* SLIDER 3 */}
-  <div className="relative border-r-2 bg-zivaa-primary shadow-md overflow-hidden">
-    <img
-      src={Slider3}
-      alt="slider3"
-      className="h-[60vh] lg:h-96 "
-    />
-    <div className="absolute inset-0 bg-black opacity-25"></div>
-
-    <div className={`absolute inset-0 flex flex-col items-center justify-center text-center px-4 ${currentSlide === 2 ? 'animate-fade-in' : 'opacity-0'}`}>
-      <h1 className="font-serif text-3xl lg:text-4xl font-bold text-zivaa-lavender mt-16 lg:mt-0">Discover the Latest Trends</h1>
-      <p className="text-white text-sm lg:text-lg font-body tracking-wider">
-        Get up to <span className="font-bold text-zivaa-accent">50% OFF</span> on our latest collection.
-      </p>
-      <button className="mt-4 bg-zivaa-accent text-zivaa-light font-body px-4 py-2 text-sm lg:text-base rounded font-semibold uppercase tracking-wider">
-        Grab the Deal
-      </button>
-    </div>
-  </div>
-</Slider>
-
-          
-      </div>
+    </section>
   
       <div className="space-y-24 ">
       
