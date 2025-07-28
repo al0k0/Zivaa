@@ -51,7 +51,7 @@ const navigate = useNavigate()
 
       <div className="relative z-10 text-center max-w-3xl px-4">
         <h1 className="text-3xl md:text-5xl font-extrabold font-serif text-zivaa-primary   drop-shadow-xl mb-4">
-          Welcome to ZYRE
+          Welcome to ZIVAA
         </h1>
 
         <h2 className="text-xl md:text-3xl font-medium text-[#FAFAFA]">
